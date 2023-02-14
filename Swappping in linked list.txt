@@ -1,0 +1,14 @@
+while(current != NULL)
+{
+next = current->next;
+current -> next = prev;
+prev = current;
+current = next;
+}
+*head_ref = prev;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. define structure
+2. creating a linked list
+3. display all the elements
