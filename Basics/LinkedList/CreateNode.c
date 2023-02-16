@@ -8,14 +8,22 @@ struct node
     struct node *link;
 };
 struct node *root = NULL;
+// in len we are going to store the length of the linked list
 int len;
+// prototypes of the functions as programs reads top to bottom
+void append(void);
+void addatfirst(void);
+void addafter(void);
+int length(void);
+void display(void);
+void delete(void);
 
 void main()
 {
     int choice;
     while (1)
     {
-        printf("single linked list operation : \n");
+        printf("single linked list operation : \n\n");
         printf("1.Add a node at the end of the list\n");
         printf("2.Add a node at the bignning of the list\n");
         printf("3.Add a not after or in the middle of the list\n");
@@ -31,6 +39,7 @@ void main()
         {
         case 1:
             append();
+            printf("node is successful \n");
             break;
 
         case 2:
@@ -42,6 +51,7 @@ void main()
             break;
         case 4:
             len = length();
+            printf("The number of nodes is the list are %d \n\n", len);
             break;
 
         case 5:
@@ -60,7 +70,7 @@ void main()
         }
     }
 }
-
+// adding a node at the last
 void append()
 {
     // creating a node here
@@ -75,7 +85,7 @@ void append()
     //  storing in the link block
     temp->link = NULL;
 
-    // if the root is empty then the adrdress in temp is given to the root
+    // if the root is empty then the adrdress in temp is given to the root and this will be first as well as last node
     if (root == NULL)
     {
         root = temp;
@@ -106,4 +116,35 @@ int length()
         temp = temp->link;
     }
     return count;
+}
+
+// this function is used to display the elements in the linked list
+void display()
+{
+    struct node *temp;
+    temp = root;
+    if (temp == NULL)
+    {
+        printf("linked list is empty \n\n");
+    }
+    else
+    {
+        while (temp != NULL)
+        {
+            printf("%d-->", temp->data);
+            temp = temp->link;
+        }
+        printf("\n\n");
+    }
+}
+
+void addatfirst(void)
+{
+}
+
+void addafter(void)
+{
+}
+void delete(void)
+{
 }
