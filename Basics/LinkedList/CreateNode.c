@@ -8,6 +8,7 @@ struct node
     struct node *link;
 };
 struct node *root = NULL;
+int len;
 
 void main()
 {
@@ -33,14 +34,14 @@ void main()
             break;
 
         case 2:
-            addatlast();
+            addatfirst();
             break;
 
         case 3:
             addafter();
             break;
         case 4:
-            length();
+            len = length();
             break;
 
         case 5:
@@ -90,4 +91,19 @@ void append()
         }
         p->link = temp;
     }
+}
+
+// this function is used to find the length of the linked list
+int length()
+{
+    int count = 0;
+    struct node *temp;
+    temp = root;
+    // if root node is null that means there are no node in the linked list, so 0 will be returned ;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->link;
+    }
+    return count;
 }
