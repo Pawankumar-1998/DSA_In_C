@@ -38,31 +38,38 @@ void main()
         switch (choice)
         {
         case 1:
+            // this function will append / add a node at the end of the list
             append();
             printf("node is successful \n");
             break;
 
         case 2:
+            // this function is used to add a node at the beginning of the list
             addatfirst();
             break;
 
         case 3:
+            // this function is used to add a node at the beginning of the list
             addafter();
             break;
         case 4:
+            // this functon is used to find the length of the list
             len = length();
             printf("The number of nodes is the list are %d \n\n", len);
             break;
 
         case 5:
+            // this function is used to display all the elements in the list
             display();
             break;
 
         case 6:
+            // this function is used to delete a node from the list
             delete ();
             break;
 
         case 7:
+            // this function is used to exit from the loop
             exit(1);
 
         default:
