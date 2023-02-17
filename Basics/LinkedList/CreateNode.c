@@ -138,13 +138,17 @@ void display()
     }
 }
 
+// this function is used to add a node at the beginning of the list (near the root node )
 void addatfirst(void)
 {
 }
 
+// this function is used to add a note in between of the list
 void addafter(void)
 {
 }
+
+// this function is used to delete the node from the list
 void delete(void)
 {
 }
