@@ -4,7 +4,10 @@
 // here i am declaring the node type
 struct node
 {
+    // node has a two part ,
+    // 1. data part
     int data;
+    // 2. address part which has the address of the next node
     struct node *link;
 };
 struct node *root = NULL;
@@ -40,7 +43,7 @@ void main()
         case 1:
             // this function will append / add a node at the end of the list
             append();
-            printf("node is successful \n");
+            printf("node is successfully linked  \n");
             break;
 
         case 2:
@@ -153,6 +156,40 @@ void addatfirst(void)
 // this function is used to add a note in between of the list
 void addafter(void)
 {
+    struct node *p, *temp;
+    int loc, len;
+    p = root;
+    len = length();
+    printf(" Please enter the location at which you want to add a node ");
+    scanf("%d", &loc);
+    if (loc > len)
+    {
+        printf(" sorry cannot be inserted \n");
+        printf(" number of nodes currently available are %d", len);
+    }
+    else
+    {
+        int i = 1;
+        while (i < loc)
+        {
+            p = p->link;
+            i++;
+        }
+        // creating a new node that need tot be linked to the position or the list
+        temp = (struct node *)malloc(sizeof(struct node));
+        printf("Enter the data in the node ");
+        scanf("%d", &temp->data);
+        temp->link = NULL;
+
+        // linking the node to the list here
+        /*
+         always remember we always first establish the right link because if we link lrft one first
+         we will lost the connection / address of the existing link
+        */
+
+        temp->link = p->link; // right linking
+        p->link = temp;       // left linking
+    }
 }
 
 // this function is used to delete the node from the list
