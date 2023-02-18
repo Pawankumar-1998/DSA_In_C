@@ -151,6 +151,16 @@ void display()
 // this function is used to add a node at the beginning of the list (near the root node )
 void addatfirst(void)
 {
+    struct node *temp;
+    int data;
+    temp = (struct node *)malloc(sizeof(struct node));
+    printf("Enter the data of the node \n");
+    scanf("%d", &temp->data);
+    temp->link = NULL;
+    // linking the new node to the root
+    temp->link = root; // right link
+    root = temp;       // left link
+    printf("Node linked sucessfully  \n");
 }
 
 // this function is used to add a note in between of the list
@@ -199,12 +209,12 @@ void delete(void)
     int len, loc;
     len = length();
 
-    printf("Enter the location of the node you want delete");
+    printf("Enter the location of the node you want delete \n");
     scanf("%d", &loc);
 
     if (loc > len)
     {
-        printf("Cannot delete , because no node at that location is available");
+        printf("Cannot delete , because no node at that location is available \n");
     }
     // if want to delete the first node
     else if (loc == 1)
@@ -213,6 +223,7 @@ void delete(void)
         root = temp->link; // disconnecting the left link
         temp->link = NULL; // disconnecting the right link
         free(temp);        // freeing / releasing the memory
+        printf("Node successfully deleted !! \n");
     }
     // if want to delete any other node in the list then below line of code follows
     else
@@ -228,5 +239,6 @@ void delete(void)
         temp->link = p->link; // disconnecting the right connection
         p->link = NULL;       // disconnecting the left connection
         free(p);              // freeing the memory
+        printf("Node successfully deleted !! \n");
     }
 }
