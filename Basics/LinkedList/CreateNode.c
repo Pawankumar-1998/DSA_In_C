@@ -195,4 +195,38 @@ void addafter(void)
 // this function is used to delete the node from the list
 void delete(void)
 {
+    struct node *temp, *p;
+    int len, loc;
+    len = length();
+
+    printf("Enter the location of the node you want delete");
+    scanf("%d", &loc);
+
+    if (loc > len)
+    {
+        printf("Cannot delete , because no node at that location is available");
+    }
+    // if want to delete the first node
+    else if (loc == 1)
+    {
+        temp = root;
+        root = temp->link; // disconnecting the left link
+        temp->link = NULL; // disconnecting the right link
+        free(temp);        // freeing / releasing the memory
+    }
+    // if want to delete any other node in the list then below line of code follows
+    else
+    {
+        int i = 1;
+        temp = root;
+        while (i < loc - 1)
+        {
+            temp = temp->link;
+            i++;
+        }
+        p = temp->link;
+        temp->link = p->link; // disconnecting the right connection
+        p->link = NULL;       // disconnecting the left connection
+        free(p);              // freeing the memory
+    }
 }
