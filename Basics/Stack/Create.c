@@ -39,11 +39,13 @@ void main()
         switch (ch)
         {
         case 1:
+            // to push elements in the stack
             printf("Enter the element to push \n");
             scanf("%d", &item);
             push(item);
             break;
         case 2:
+            // to pop the top element form the stack
             item = pop();
             if (item == 0)
             {
@@ -55,12 +57,15 @@ void main()
             }
             break;
         case 3:
+            // to see the top element of the stack
             peek();
             break;
         case 4:
+            // to display all the elements in the stack
             traverse();
             break;
         case 5:
+            // to exit from the stack operation
             exit(0);
             break;
         default:
