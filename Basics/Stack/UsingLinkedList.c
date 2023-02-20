@@ -8,10 +8,14 @@ struct node
     struct node *link;
 };
 struct node *top = NULL;
+// function prototypes
+void push(int);
+void pop(void);
+void traverse(void);
 
 void main()
 {
-    int ch;
+    int ch, element;
     while (1)
     {
         printf("\n\n\n stack operations using linked list \n\n\n");
@@ -27,10 +31,10 @@ void main()
         switch (ch)
         {
         case 1:
-            int element;
             printf("Enter the element you want push into the stack \n");
             scanf("%d", &element);
             push(element);
+            printf("%d is successfully entered into the stack \n", element);
             break;
 
         case 2:
@@ -50,10 +54,52 @@ void main()
     }
 }
 
-void push()
+// this function is used to push the element into the stack
+void push(int element)
 {
     // creating a node here
     struct node *temp;
     temp = (struct node *)malloc(sizeof(struct node));
-    printf("Enter the element you want to push into stack \n");
+    temp->data = element;
+    temp->link = top;
+    top = temp;
+}
+
+// this fucntion is used to pop(i.e delete ) the top element from the stack
+void pop()
+{
+    struct node *temp;
+    temp = top;
+    if (top == NULL)
+    {
+        printf("No elements to delete as the stack is empty \n");
+    }
+    else
+    {
+        printf("%d is popped out of the stack \n", temp->data);
+        top = top->link;
+        temp->link = NULL;
+        free(temp);
+    }
+}
+
+void traverse()
+{
+    struct node *temp;
+    if (top == NULL)
+    {
+        printf("No items to display as the stack is empty \n");
+    }
+    else
+    {
+        temp = top;
+        printf("Displaying the list from top to bottom as it is a stack \n");
+        while (temp != NULL)
+        {
+            printf("%d", temp->data);
+            printf("|");
+            printf("|");
+            temp = temp->link;
+        }
+    }
 }
