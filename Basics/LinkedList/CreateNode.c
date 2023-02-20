@@ -10,6 +10,7 @@ struct node
     // 2. address part which has the address of the next node
     struct node *link;
 };
+// root node is globally available
 struct node *root = NULL;
 // in len we are going to store the length of the linked list
 int len;
@@ -20,6 +21,7 @@ void addafter(void);
 int length(void);
 void display(void);
 void delete(void);
+void swap(void);
 
 void main()
 {
@@ -33,7 +35,8 @@ void main()
         printf("4.Find the lenght of the list\n");
         printf("5.Display all the elements in the list\n");
         printf("6.Delete a node from the list\n");
-        printf("7.How to quit from the program\n");
+        printf("7.Swap alternate nodes \n");
+        printf("8.How to quit from the program\n");
 
         printf("Enter your choice : ");
         scanf("%d", &choice);
@@ -70,8 +73,13 @@ void main()
             // this function is used to delete a node from the list
             delete ();
             break;
-
         case 7:
+            // this program is used to swap the alternate nodes of thr linked list
+            swap();
+            printf("Sucessfully Swapped \n");
+            break;
+
+        case 8:
             // this function is used to exit from the loop
             exit(1);
 
@@ -240,5 +248,34 @@ void delete(void)
         p->link = NULL;       // disconnecting the left connection
         free(p);              // freeing the memory
         printf("Node successfully deleted !! \n");
+    }
+}
+
+void swap()
+{
+    int i = 1;
+    struct node *p, *q, *r;
+    int position;
+    printf("Enter the node number which you want to swap \n");
+    scanf("%d", &position);
+    if (root == NULL)
+    {
+        printf("Cannot swap as there are no elements present in the linked list \n");
+    }
+    else
+    {
+        p = root; // 1 st pointer
+        while (i < position - 1)
+        {
+            p = p->link;
+            i++;
+        }
+        q = p->link; // 2 nd pointer
+        r = q->link; // 3rd pointer
+
+        // swapping here
+        q->link = r->link;
+        p->link = r;
+        r->link = q;
     }
 }
