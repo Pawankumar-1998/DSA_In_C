@@ -1,24 +1,20 @@
 #include <stdio.h>
-#include <conio.h>
-#include <string.h>
-// #include <array>
 
-int main()
+// void traversal(int);
+void main()
 {
-    // clrscr();
     int n;
-    printf("How many number you want to enter in the array ");
+    printf("How many number you want to add in the array \n");
     scanf("%d", &n);
-    printf("the adress of n is %d ", &n);
-    int a[n];
+    int arr[n];
     for (int i = 0; i < n; i++)
     {
-        printf("Enter the element number in %d \n", i + 1);
-        scanf("%d", &a[i]);
+        printf("Enter the element in index number %d \n", i);
+        scanf("%d", &arr[i]);
     }
+    //  displaying all the elements
     for (int i = 0; i < n; i++)
     {
-        printf(" The element at  index is %d", a[i], "\n");
+        printf(" Element at index %d is  %d \n", i, arr[i]);
     }
-    return 0;
 }
