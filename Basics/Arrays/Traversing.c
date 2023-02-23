@@ -29,8 +29,11 @@ void linearSearch(int arr[], int size, int target)
 // bubble sort algoritm
 void bubbleSort(int arr[], int size)
 {
+
+    int swapped; // this for making bit optimization for bubbble sort algorithm
     for (int i = 0; i < size; i++)
     {
+        swapped = 0; // it means no swapped where happpen
         for (int j = 0; j < size - i - 1; j++)
         {
             if (arr[j] > arr[j + 1])
@@ -38,7 +41,14 @@ void bubbleSort(int arr[], int size)
                 int temp = arr[j + 1];
                 arr[j + 1] = arr[j];
                 arr[j] = temp;
+                swapped = 1; // if this condition hits it means it has swapped the values ;
             }
+        }
+
+        // if the inner loop haven't maded any swaps it means arrays has sorted and doesnt need to make it run for futher iteration , so break the loop
+        if (swapped == 0)
+        {
+            break;
         }
     }
 }
@@ -80,6 +90,7 @@ void main()
         bubbleSort(arr, n);
         printf("After sorting \n");
         traversal(arr, n);
+        break;
     }
 }
 // int arr[] = {1, 2, 3, 4, 5, 6};
