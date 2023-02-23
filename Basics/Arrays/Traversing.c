@@ -53,6 +53,27 @@ void bubbleSort(int arr[], int size)
     }
 }
 
+// selection sort algorithm
+void selectionSort(int arr[], int n)
+{
+    int min, i, j;
+    for (i = 0; i < n - 1; i++)
+    {
+        min = i;
+        for (j = i + 1; j < n; j++)
+        {
+            if (arr[j] < arr[min])
+            {
+                min = j;
+            }
+        }
+
+        int temp = arr[i];
+        arr[i] = arr[min];
+        arr[min] = temp;
+    }
+}
+
 void main()
 {
     int n, target, ch;
@@ -91,6 +112,11 @@ void main()
         printf("After sorting \n");
         traversal(arr, n);
         break;
+
+    case 4:
+        // selection sort
+        selectionSort(arr, n);
+        traversal(arr, n);
     }
 }
 // int arr[] = {1, 2, 3, 4, 5, 6};
