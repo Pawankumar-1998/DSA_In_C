@@ -1,20 +1,27 @@
 #include <stdio.h>
 
-// void traversal(int);
+// this function is used for traversal of the array (i.e displaying the elements in the array)
+void traversal(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf(" the element at index %d is %d \n", i, arr[i]);
+    }
+}
 void main()
 {
     int n;
-    printf("How many number you want to add in the array \n");
+    printf("Enter the number of element you want to enter in the array \n");
     scanf("%d", &n);
+
+    //  declaring the array
     int arr[n];
     for (int i = 0; i < n; i++)
     {
-        printf("Enter the element in index number %d \n", i);
+        printf("Enter the element at index %d ", i);
         scanf("%d", &arr[i]);
     }
-    //  displaying all the elements
-    for (int i = 0; i < n; i++)
-    {
-        printf(" Element at index %d is  %d \n", i, arr[i]);
-    }
+    // printint the array
+    printf("The details of the array are :\n");
+    traversal(arr, n);
 }
