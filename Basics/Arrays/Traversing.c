@@ -100,8 +100,8 @@ void main()
         break;
 
     case 2:
-        // linear search algorithm
         printf("Enter the element you are looking for in the array \n");
+        // linear search algorithm
         linearSearch(arr, n, target);
         scanf("%d", &target);
         break;
