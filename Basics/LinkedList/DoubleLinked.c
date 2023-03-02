@@ -14,6 +14,7 @@ struct node *root = NULL;
 
 // pre-defining the functions
 void insert(void);
+void atFirst(void);
 
 void main()
 {
@@ -21,7 +22,8 @@ void main()
     while (1)
     {
         printf("Welcome to double linked list \n");
-        printf("1. Insert \n");
+        printf("1. Insert at the last \n");
+        printf("2.Insert at the begning ");
         printf("Enter Your Choice \n");
         scanf("%d", &ch);
         switch (ch)
@@ -32,6 +34,10 @@ void main()
             break;
 
         case 2:
+            atFirst();
+            break;
+
+        case 3:
             exit(0);
             break;
 
@@ -65,5 +71,26 @@ void insert()
         }
         p->right = temp; // creating the right connection
         temp->left = p;  // creating the left connection
+    }
+}
+
+// this function is used to insert a node at the begning of the last
+void atFirst()
+{
+    struct node *temp;
+    temp = (struct node *)malloc(sizeof(struct node));
+    printf("Enter the data you want to insert \n");
+    scanf("%d", &temp->data);
+    temp->left = NULL;
+    temp->right = NULL;
+    if (root == NULL)
+    {
+        root = temp;
+    }
+    else
+    {
+        temp->right = root; // right connection
+        root->left = temp;  // left connection
+        root = temp;
     }
 }
