@@ -15,6 +15,7 @@ struct node *root = NULL;
 // pre-defining the functions
 void insert(void);
 void atFirst(void);
+void traversal(void);
 
 void main()
 {
