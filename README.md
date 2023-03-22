@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<h1>JAVA_DSA</h1>
-	<p>This repository contains Java implementations of various data structures and algorithms.</p>
+	<h1>DSA_IN_C</h1>
+	<p>This repository contains C implementations of various data structures and algorithms.</p>
 	<h2>Data Structures</h2>
 	<ul>
 		<li>LinkedList</li>
@@ -30,7 +30,7 @@
 		</li>
 	</ul>
 	<h2>Usage</h2>
-	<p>To use these implementations, simply clone the repository and import the relevant classes into your Java project.</p>
+	<p>To use these implementations, simply clone the repository and import the relevant classes into your C project.</p>
 	<h2>Contributions</h2>
 	<p>Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.</p>
 </body>
