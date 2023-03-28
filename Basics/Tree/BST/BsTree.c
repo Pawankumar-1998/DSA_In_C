@@ -86,3 +86,5 @@ void insert(int element)
         }
     }
 }
+
+// there are 3 cases in deleting a node in tree 
