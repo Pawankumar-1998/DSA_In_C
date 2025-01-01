@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// structure of the node
+struct node
+{
+    int data;
+    struct node *link;
+};
+struct node *root;
+
+// pre definig the functions
+void insertAtFirst(void);
+void traversal(void);
+
+int main()
+{
+    int ch;
+    while (1)
+    {
+        printf("1. to enter the data at the first of the linked list \n");
+        printf("2. Exit \n");
+        printf("3. traverse into the linked list \n");
+        printf("Enter your choice \n");
+        scanf("%d", &ch);
+        switch (ch)
+        {
+        case 1:
+            insertAtFirst();
+            printf("node inserted at first sucessfully \n");
+            break;
+
+        case 2:
+            exit(0);
+            break;
+
+        case 3:
+            traversal();
+            break;
+
+        default:
+            printf("invalid choice \n");
+        }
+    }
+    
+    return 0;
+}
+
+// this functon is use to insert a node at the beggning of the list
+void insertAtFirst(void)
+{
+
+    struct node *temp;
+    temp = (struct node *)malloc(sizeof(struct node));
+    printf("Enter the data you want to enter \n");
+    scanf("%d", temp->data);
+
+    temp->link = NULL;
+
+    temp->link = root;
+    root = temp;
+}
+
+// this function is use to travere the linked list
+void traversal(void)
+{
+    struct node *t;
+    t = root;
+
+    if (root == NULL)
+    {
+        printf("No elements to print \n");
+    }
+    else
+    {
+        while (t != NULL)
+        {
+            printf("%d -->", t->data);
+            t = t->link;
+        }
+    }
+}
+

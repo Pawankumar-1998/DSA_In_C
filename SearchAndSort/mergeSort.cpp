@@ -91,7 +91,7 @@ void printArray(int arr[], int n)
 
 int main()
 {
-    int arr[] = {5, 10, 1, 2, 19, 4};
+    int arr[] = {12, 11, 13, 5, 6, 7};
     int sizeOfArr = sizeof(arr) / sizeof(arr[0]);
     int start = 0;
     int end = sizeOfArr - 1;
